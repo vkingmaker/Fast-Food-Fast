@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Order Page</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/main.css" />
+</head>
+
+<body>
+    <nav>
+        <div class="brand_name">
+            <h2>Fast-Food-Fast</h2>
+        </div>
+        <ul>
+            <li>
+                <a href="#">Home</a>
+            </li>
+            <li>
+                <a href="#">Place an Order</a>
+            </li>
+            <li>
+                <a href="#">Order History</a>
+            </li>
+            <li>
+                <a href="#">Orders</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="jombothron">
+
+    </div>
+    <h2 class="fancy-heading">PLACE YOUR ORDER</h2>
+    <div>
+        <p>Get served with what you need at the right place, at the right time.Our recipes are out of this world</p>
+    </div>
+    <section class="place-your-order">
+        <div class="order-form">
+            <form action="#">
+                <select name="available_food" id="menu">
+                    <option value="">Fried rice and Chicken</option>
+                    <option value="">Jellof Rice with salad</option>
+                    <option value="">Owo and Starch</option>
+                    <option value="">Starch and Banga</option>
+                    <option value="">Poridge Yam</option>
+                </select>
+                <input type="number" name="quantity" id="quantity" placeholder="quantity" min="1" max="10">
+                <input type="text" name="address" id="address" placeholder="Address">
+                <textarea col="16" rows="12">Any specific request?</textarea>
+                <button>Order</button>
+            </form>
+        </div>
+        <div class="side_image">
+            <figure>
+                <img src="img/cuisine.jpg" alt="">
+                <figcaption>lorem</figcaption>
+            </figure>
+        </div>
+    </section>
+    <section class="customer-favorite">
+        <h2 class="fancy-heading">POPULAR DEMAND</h2>
+        <div class="testimonial">
+            <p>Our customers have really are really impressed with our service and the type of food we bring to the table but
+                statistics shows that there are high demands on thee sets... You Should give them a try IF!</p>
+        </div>
+        <div class="food-samples">
+            <img src="img/assortedstew.jpg" alt="first Favorite Food">
+            <img src="img/africanS.jpg" alt="second favorite food">
+            <img src="img/stakes.jpg" alt="third favorite food">
+            <img src="img/nodles.jpg" alt="fourth favorite food">
+        </div>
+    </section>
+    <section>
+        <h2 class="fancy-heading">NEWS LETTER</h2>
+        <div class="news-letter">
+        <form action="#">
+            <input type="text" name="email" id="email" placeholder="please enter a valid email">
+            <button>Subscribe</button>
+        </form>
+        </div>
+    </section>
+
+    <footer>
+        <div>&copy;2018 Fast-Food-Fast</div>
+    </footer>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
