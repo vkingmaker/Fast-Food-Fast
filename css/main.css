@@ -48,6 +48,19 @@ nav {
     background-size: cover;
 }
 
+.jombothron > div{
+    display:flex;
+    justify-content: flex-end;
+    font-weight:bold;
+    color:#fff;
+    height:100%;
+}
+.jombothron > div > span{
+    background-color:#000;
+    align-self:flex-end;
+    padding:10px;
+}
+
 .fancy-heading {
     margin-top: 2rem;
     text-align: center;
