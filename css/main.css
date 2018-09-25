@@ -4,6 +4,7 @@
     font-weight: normal;
     src: local('Bariol-Regular'), url('Bariol.woff') format('woff');
 }
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -14,23 +15,24 @@ a {
     text-decoration: none;
 }
 
+/* div.header#mini-header {
+    display: none;
+} */
 html,
 body {
-    font-family:'Bariol-Regular';
+    font-family: 'Bariol-Regular';
     width: 100%;
     height: 100%;
 }
-p{
-    line-height:2em;
+
+p {
+    line-height: 2em;
 }
+
 img {
     width: 100%;
 }
 
-/* .main-content{
-    width:90%;
-    margin:0 auto;
-} */
 
 nav {
     padding: 1.5em;
@@ -48,22 +50,27 @@ nav {
     background-size: cover;
 }
 
-.jombothron > div{
-    display:flex;
+.jombothron>div {
+    display: flex;
     justify-content: flex-end;
-    font-weight:bold;
-    color:#fff;
-    height:100%;
+    font-weight: bold;
+    color: #fff;
+    height: 100%;
 }
-.jombothron > div > span{
-    background-color:#000;
-    align-self:flex-end;
-    padding:10px;
+
+.jombothron>div>span {
+    background-color: #000;
+    align-self: flex-end;
+    padding: 10px;
 }
 
 .fancy-heading {
     margin-top: 2rem;
     text-align: center;
+}
+
+.fancy-heading>a {
+    color: #000 !important;
 }
 
 .fancy-heading::before {
@@ -92,7 +99,7 @@ nav ul {
     display: flex;
     flex-direction: row;
     margin-right: 5%;
-    width: 55%;
+    width: 50%;
     justify-content: space-around;
 }
 
@@ -150,6 +157,7 @@ a:active {
     background-color: #2e353b;
 }
 
+
 .slide {
     height: 100%;
     width: 100%;
@@ -206,7 +214,7 @@ a:active {
     background-image: url('../img/form-background.jpg');
     background-position: cover;
     background-repeat: no-repeat;
-    background-size: 100%;
+    background-size: 100% 100%;
 }
 
 .overlay {
@@ -216,7 +224,6 @@ a:active {
 }
 
 .loginForm {
-    /* border:1px solid green; */
     height: 100%;
     display: flex;
     justify-content: center;
@@ -228,7 +235,6 @@ a:active {
     justify-content: center;
     align-content: center;
     width: 40%;
-    /* border:1px solid red; */
 }
 
 .loginForm>div:nth-child(2) {
@@ -238,7 +244,6 @@ a:active {
 
 .loginForm>div>form {
     width: 90%;
-    /* border:1px solid white; */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -275,27 +280,22 @@ button {
 }
 
 button+p {
-    margin: 1em 0 3em;
+    margin: 0.2em 0 1em;
 }
 
 button+p>span {
     font-weight: bold;
 }
 
-/* .loginForm form{
-border:1px solid red;
-width:30%;
-background-color:#fff;
-height:80vh;
-display:flex;
-flex-direction: column;
-justify-content:center;
+.homelink {
+    margin-bottom: 2em;
 }
 
-.loginForm form input{
-display: block;
-width:80%;
-} */
+.homelink a i {
+    display: inline-block;
+    margin-right: 0.3em;
+}
+
 
 /* ===========================/Login ============================== */
 
@@ -347,11 +347,13 @@ width:80%;
 
 .news-letter form {
     width: 40%;
-    height: 40%;
+    max-height: 40%;
     margin: auto;
 }
 
 .news-letter button {
+    margin: 0;
+    height: 59px;
     display: inline-block;
     width: 30%;
     border-top-left-radius: 0;
@@ -360,6 +362,7 @@ width:80%;
 
 .news-letter input {
     width: 60%;
+    height: 60px;
     padding: 0 1rem;
     line-height: 2.8rem;
 }
@@ -428,7 +431,18 @@ td {
     margin: auto;
     padding: 0.8rem;
 }
-
+tr > td:nth-child(6){
+    min-width:220px;
+}
+tr > td:nth-child(6) span{
+display:inline-flex;
+justify-content: center;
+background-color:#120103;
+width:85px;
+color:#fff;
+padding:1em;
+border-radius:30px;
+}
 .statistics {
     background: url(../img/home-4.jpg);
     display: flex;
@@ -451,8 +465,9 @@ td {
     align-items: center;
     padding: 2rem;
 }
-.feedusback{
-    background-color:#80808017;
+
+.feedusback {
+    background-color: #80808017;
     padding: 3rem;
 }
 
@@ -474,14 +489,16 @@ td {
 .feedback figcaption {
     margin-top: 2rem;
 }
-.customer-care{
-    background-color:#80808017;
-    margin:6rem 0;
-    padding:1rem;
+
+.customer-care {
+    background-color: #80808017;
+    margin: 6rem 0;
+    padding: 1rem;
 }
+
 .complaint {
     display: flex;
-    margin-top:3rem;
+    margin-top: 3rem;
 }
 
 .complaint>div:nth-child(1) {
@@ -508,7 +525,118 @@ td {
 .complaint>div {
     width: 48%;
 }
-.complaint span{
-    padding:0.4rem;
+
+.complaint span {
+    padding: 0.4rem;
 }
 
+#hmbutton {
+    position: absolute;
+    z-index:-2000;
+}
+
+label[for="hmbutton"] {
+    position: absolute;
+    left: 80%;
+    border: 1px solid #fff;
+    padding: 0.5rem;
+    border-radius: 3px;
+    z-index: -2000;
+}
+
+@media(max-width:375px) {
+    .loginForm div:nth-child(1) {
+        width: 100%;
+    }
+
+    .loginForm div:nth-child(2) {
+        display: none;
+    }
+}
+
+@media(max-width:768px) {
+    section#nl-section {
+        display: none;
+    }
+
+    section,
+    section>div,
+    div {
+        min-width: 100%;
+    }
+
+    .food-samples {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .food-samples img {
+        flex: 1;
+        min-width: 100%;
+        margin-bottom: 0.9em;
+    }
+
+    .testimonial {
+        display: flex;
+    }
+
+    .testimonial>p {
+        flex: 1;
+        padding: 0 5%;
+    }
+
+    .fancy-heading+div>p {
+        width: 100%;
+    }
+
+    .side_image {
+        display: none;
+    }
+
+    .order-form>form>input,
+    .order-form form>select,
+    .order-form form>textarea,
+    .order-form button {
+        width: 90%;
+    }
+
+    #hmbutton+ul {
+        opacity: 0;
+        z-index: -2000;
+        width: 100%;
+        position: absolute;
+        flex-direction: column;
+        top: 4.5rem;
+        background-color: #120103;
+        width: 90%;
+    }
+
+    #hmbutton+ul li {
+        /* display:block; */
+        padding: 0.5rem;
+    }
+
+    #hmbutton {
+        z-index: -2000;
+    }
+
+    label[for="hmbutton"] {
+        z-index: 12000;
+    }
+
+    #hmbutton:checked+ul {
+        opacity: 1;
+        z-index: 2000;
+    }
+    .feedback{
+       display:flex;
+       flex-direction:column; 
+    }
+    .feedback figure{
+        width:100%;
+    }
+    .complaint{
+        display:flex;
+        flex-direction:column;
+    }
+}
