@@ -9,15 +9,29 @@ let should = chai.should();
 
 chai.use(chaiHttp);
 
-//Our parent block
 describe('Order', () => {
-  beforeEach((done) => { //Before each test we empty the database
+  beforeEach((done) => { 
     done();
   });
 
 /*
  * Test the /POST route
  */
+  describe('/GET order', function () {
+    it('it should GET all the orders', function (done) {
+      chai.request(server)
+        .get('/v1/order')
+        .end(function (err, res) {
+          res.should.have.status(200);
+          res.body.should.be.a('array');
+          res.body.length.should.be.eql(5);
+          done();
+        });
+    });
+  });
+// });
+
+
 describe('/POST order', () => {
   it('it should POST an Order if the ORDER property has a value', (done) => {
     let order = {
