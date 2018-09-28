@@ -43,5 +43,12 @@ export default {
     res.json({
       "message": `Order Deleted Successfully id ${req.params.id}`
     });
+  },
+  removeAll(req, res, next) {
+    db = [];
+    res.json({
+      "message": `The Order List has been Emptied successfully!`,
+      db
+    });
   }
 }

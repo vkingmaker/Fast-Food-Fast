@@ -33,5 +33,6 @@ router.put('/:id', _order2.default.updateById);
 
 router.delete('/:id', _order2.default.removeById);
 
+router.delete('/', _order2.default.removeAll);
 exports.default = router;
 module.exports = exports.default;

@@ -16,4 +16,5 @@ router.put('/:id', Order.updateById);
 
 router.delete('/:id', Order.removeById);
 
+router.delete('/', Order.removeAll);
 export default router;
