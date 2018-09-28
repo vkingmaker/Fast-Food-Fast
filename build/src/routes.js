@@ -29,5 +29,7 @@ router.get('/:id', _order2.default.getOrderById);
 
 router.post('/', _order2.default.placeOrder);
 
+router.put('/:id', _order2.default.updateById);
+
 exports.default = router;
 module.exports = exports.default;

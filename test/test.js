@@ -62,6 +62,43 @@ describe('/GET/:id order', () => {
   });
 });
 
+ /*
+   * Test the /PUT/:id route
+   */
+  describe('/PUT/:id book', () => {
+    it('it should UPDATE an order given the id', (done) => {
+      let order = {
+        "id": 2,
+        "Date": "8/30/2018",
+        "Name": "Ufomba Victoria",
+        "Address": "1b Nweke street Aba, Abia State",
+        "Tel.No": "07061277913",
+        "Order": "Nsala and fufu",
+        "Instruction": "should be served HOT",
+        "status": "pending"
+      }
+      chai.request(server)
+        .put('/v1/order/' + order.id)
+        .send({
+          "id": 2,
+          "Date": "8/30/2018",
+          "Name": "Ufomba Victoria Monday",
+          "Address": "1b Nweke street Aba, Abia State",
+          "Tel.No": "07061277913",
+          "Order": "Nsala and fufu",
+          "Instruction": "should be served HOT",
+          "status": "Accepted"
+        })
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('object');
+          res.body.should.have.property('message').eql(`Your Order has been Updated id ${order.id}`);
+          res.body.updatedOrder.should.have.property('status').eql('Accepted');
+          done();
+        });
+    });
+  });
+
 /*
  * Test the /POST route
  */

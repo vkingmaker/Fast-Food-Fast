@@ -12,4 +12,6 @@ router.get('/:id', Order.getOrderById);
 
 router.post('/', Order.placeOrder);
 
+router.put('/:id', Order.updateById);
+
 export default router;

@@ -28,5 +28,14 @@ export default {
       "message": "Your order has been placed!",
       addedOrder
     });
+  },
+  updateById(req, res, next) {
+    let updatedOrder = {};
+    db.splice(req.params.id - 1, 1, req.body);
+    updatedOrder = req.body;
+    res.json({
+      "message": `Your Order has been Updated id ${req.params.id}`,
+      updatedOrder
+    });
   }
 }
