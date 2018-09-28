@@ -31,5 +31,7 @@ router.post('/', _order2.default.placeOrder);
 
 router.put('/:id', _order2.default.updateById);
 
+router.delete('/:id', _order2.default.removeById);
+
 exports.default = router;
 module.exports = exports.default;

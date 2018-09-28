@@ -47,6 +47,12 @@ exports.default = {
       "message": "Your Order has been Updated id " + req.params.id,
       updatedOrder: updatedOrder
     });
+  },
+  removeById: function removeById(req, res, next) {
+    db.splice(req.params.id - 1, 1);
+    res.json({
+      "message": "Order Deleted Successfully id " + req.params.id
+    });
   }
 };
 module.exports = exports.default;
