@@ -12,21 +12,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var db = (0, _db2.default)();
 
-// class Order{
-//     constructor(){}
-
-//    getOrder(req, res, next){
-//         return res.json(db);
-//     } 
-
-// }
-// export default Order;
-
 exports.default = {
-    getOrder: function getOrder(req, res, next) {
+    getOrder: function getOrder(req, res) {
+        if (db) res.statusCode = 200;
         return res.json(db);
     },
-    placeOrder: function placeOrder(req, res, next) {
+    placeOrder: function placeOrder(req, res) {
         var addedOrder = {};
         if (db.length) {
             req.body.id = db[db.length - 1].id + 1;
