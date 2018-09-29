@@ -4,4 +4,4 @@ node_js:
 cache:
   directories:
     - "node_modules"
-script: cd server && npm install && npm run test
+script: cd server && npm run test
