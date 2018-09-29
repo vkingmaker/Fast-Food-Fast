@@ -12,17 +12,24 @@ var _order = require('./order');
 
 var _order2 = _interopRequireDefault(_order);
 
+<<<<<<< HEAD
 var _db = require('./mock/db');
 
 var _db2 = _interopRequireDefault(_db);
 
+=======
+>>>>>>> ft-get-order-list-160239558
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var router = _express2.default.Router();
 
+<<<<<<< HEAD
 var db = (0, _db2.default)();
 
 /* GET home page. */
+=======
+router.get('/', _order2.default.getOrder);
+>>>>>>> ft-get-order-list-160239558
 router.post('/', _order2.default.placeOrder);
 
 exports.default = router;
