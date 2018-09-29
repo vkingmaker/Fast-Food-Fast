@@ -4,7 +4,7 @@
   "description": "An API for a food Ordering website (Fast-Food-Fast).",
   "repository": {
     "type": "git",
-    "url": "https://github.com/vkingmaker/fast-food-fast-api.git"
+    "url": "https://github.com/vkingmaker/Fast-Food-Fast.git"
   },
   "author": "Monday Victor Akubudike",
   "license": "MIT",
@@ -16,7 +16,7 @@
   "scripts": {
     "start": "node build/src/app.js",
     "clean": "rimraf dist",
-    "build": "babel src/**/*.js --out-dir build --presets=es2015",
+    "build": "babel src/*.js --out-dir build --presets=es2015",
     "test": "mocha test/*.js",
     "lint": "esw -w src test"
   },
