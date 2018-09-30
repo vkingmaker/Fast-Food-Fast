@@ -1,6 +1,0 @@
-{
-  "name": "fast-food-fast",
-  "description": "An Apllication Programming Interface for a food ordering website",
-  "repository": "https://github.com/vkingmaker/fast-food-fast-api.git",
-  "keywords": ["node", "express", "heroku","Andela","API","Babel"]
-}
