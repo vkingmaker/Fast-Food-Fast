@@ -1,7 +1,11 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
+<<<<<<< HEAD
+  value: true
+=======
     value: true
+>>>>>>> develop
 });
 
 var _db = require("./mock/db");
@@ -13,6 +17,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var db = (0, _db2.default)();
 
 exports.default = {
+  updateById: function updateById(req, res) {
+    var updatedOrder = {};
+    db.splice(req.params.id - 1, 1, req.body);
+    updatedOrder = req.body;
+    res.json({
+      "message": "Your Order has been Updated id " + req.params.id,
+      updatedOrder: updatedOrder
+    });
+  }
     getOrder: function getOrder(req, res) {
         return res.json(db);
     },
