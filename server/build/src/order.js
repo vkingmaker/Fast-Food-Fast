@@ -19,6 +19,41 @@ exports.default = {
       "message": "The Order List has been Emptied successfully!",
       db: db
     });
-  }
+  },
+  updateById: function updateById(req, res) {
+    var updatedOrder = {};
+    db.splice(req.params.id - 1, 1, req.body);
+    updatedOrder = req.body;
+    res.json({
+      "message": "Your Order has been Updated id " + req.params.id,
+      updatedOrder: updatedOrder
+    });
+  },
+    getOrder: function getOrder(req, res) {
+        return res.json(db);
+    },
+    getOrderById: function getOrderById(req, res, next) {
+        var particularOrder = db.filter(function (value) {
+            if (value.id === +req.params.id) return value;
+        });
+        res.json(particularOrder);
+    },
+    placeOrder: function placeOrder(req, res) {
+        var addedOrder = {};
+        if (db.length) {
+            req.body.id = db[db.length - 1].id + 1;
+            addedOrder = req.body;
+            db.push(req.body);
+        } else {
+            req.body.id = 1;
+            addedOrder = req.body;
+            db.push(req.body);
+        }
+
+        res.json({
+            "message": "Your order has been placed!",
+            addedOrder: addedOrder
+        });
+    }
 };
 module.exports = exports.default;
