@@ -17,16 +17,15 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var router = _express2.default.Router();
 
 /* GET home page. */
-router.get('/', _order2.default.getOrder);
+router.put('/:id', _order2.default.updateById);
 
+router.get('/', _order2.default.getOrder);
 router.get('/:id', _order2.default.getOrderById);
 
 router.post('/', _order2.default.placeOrder);
 
-router.put('/:id', _order2.default.updateById);
-
 router.delete('/:id', _order2.default.removeById);
-
 router.delete('/', _order2.default.removeAll);
+
 exports.default = router;
 module.exports = exports.default;
