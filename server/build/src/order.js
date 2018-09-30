@@ -16,7 +16,8 @@ exports.default = {
     removeById: function removeById(req, res) {
         db.splice(req.params.id - 1, 1);
         res.json({
-            "message": "Order Deleted Successfully id " + req.params.id
+            "message": "Order Deleted Successfully id " + req.params.id});
+        },
   updateById: function updateById(req, res) {
     var updatedOrder = {};
     db.splice(req.params.id - 1, 1, req.body);
@@ -25,7 +26,7 @@ exports.default = {
       "message": "Your Order has been Updated id " + req.params.id,
       updatedOrder: updatedOrder
     });
-  }
+  },
     getOrder: function getOrder(req, res) {
         return res.json(db);
     },
