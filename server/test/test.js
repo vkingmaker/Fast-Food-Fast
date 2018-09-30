@@ -15,6 +15,22 @@ describe('Order', () => {
     done();
   });
 
+    /*
+   * Test the /GET route
+   */
+  describe('/GET order', () => {
+    it('it should GET all the orders', (done) => {
+      chai.request(server)
+        .get('/v1/order')
+        .end((err, res) => {
+          res.should.have.status(200);
+          res.body.should.be.a('array');
+          res.body.length.should.be.eql(5);
+          done();
+        });
+    });
+  });
+
   /*
    * Test the /DELETE route
    */
@@ -27,13 +43,14 @@ describe('Order', () => {
           res.body.should.be.a('object');
           res.body.should.have.property('message').eql('The Order List has been Emptied successfully!');
           res.body.db.should.be.a('array');
+          done();
         });
     });
   });
   /*
    * Test the /PUT/:id route
    */
-  describe('/PUT/:id book', () => {
+  describe('/PUT/:id order', () => {
     it('it should UPDATE an order given the id', (done) => {
       let order = {
         "id": 2,
@@ -67,20 +84,6 @@ describe('Order', () => {
     });
   });
 
-  /*
-   * Test the /GET route
-   */
-  describe('/GET order', () => {
-    it('it should GET all the orders', (done) => {
-      chai.request(server)
-        .get('/v1/order')
-        .end((err, res) => {
-          res.should.have.status(200);
-          res.body.should.be.a('array');
-          res.body.length.should.be.eql(5);
-        });
-    });
-  });
   /*
    * Test the /POST route
    */
