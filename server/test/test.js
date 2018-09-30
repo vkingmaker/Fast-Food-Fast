@@ -32,26 +32,17 @@ describe('Order', () => {
   });
 
   /*
-   * Test the /DELETE/:id route
+   * Test the /DELETE route
    */
-  describe('/DELETE/:id order', () => {
-    it('it should DELETE an order given the id', (done) => {
-      let order = {
-        "id": 2,
-        "Date": "8/30/2018",
-        "Name": "Ufomba Victoria",
-        "Address": "1b Nweke street Aba, Abia State",
-        "Tel.No": "07061277913",
-        "Order": "Nsala and fufu",
-        "Instruction": "should be served HOT",
-        "status": "Accepted"
-      }
+  describe('/DELETE order', () => {
+    it('it should DELETE all the orders in the JSON file', (done) => {
       chai.request(server)
-        .delete('/v1/order/' + order.id)
+        .delete('/v1/order')
         .end((err, res) => {
           res.should.have.status(200);
           res.body.should.be.a('object');
-          res.body.should.have.property('message').eql(`Order Deleted Successfully id ${order.id}`);
+          res.body.should.have.property('message').eql('The Order List has been Emptied successfully!');
+          res.body.db.should.be.a('array');
           done();
         });
     });
@@ -59,7 +50,7 @@ describe('Order', () => {
   /*
    * Test the /PUT/:id route
    */
-  describe('/PUT/:id book', () => {
+  describe('/PUT/:id order', () => {
     it('it should UPDATE an order given the id', (done) => {
       let order = {
         "id": 2,

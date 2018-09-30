@@ -1,7 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-    value: true
+  value: true
 });
 
 var _db = require("./mock/db");
@@ -13,11 +13,33 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var db = (0, _db2.default)();
 
 exports.default = {
-    removeById: function removeById(req, res) {
-        db.splice(req.params.id - 1, 1);
-        res.json({
-            "message": "Order Deleted Successfully id " + req.params.id});
-        },
+  getOrder: function getOrder(req, res) {
+    return res.json(db);
+  },
+  getOrderById: function getOrderById(req, res, next) {
+    var particularOrder = db.filter(function (value) {
+      if (value.id === +req.params.id) return value;
+    });
+    res.json(particularOrder);
+  },
+
+  placeOrder: function placeOrder(req, res) {
+    var addedOrder = {};
+    if (db.length) {
+      req.body.id = db[db.length - 1].id + 1;
+      addedOrder = req.body;
+      db.push(req.body);
+    } else {
+      req.body.id = 1;
+      addedOrder = req.body;
+      db.push(req.body);
+    }
+
+    res.json({
+      "message": "Your order has been placed!",
+      addedOrder: addedOrder
+    });
+  },
   updateById: function updateById(req, res) {
     var updatedOrder = {};
     db.splice(req.params.id - 1, 1, req.body);
@@ -27,31 +49,18 @@ exports.default = {
       updatedOrder: updatedOrder
     });
   },
-    getOrder: function getOrder(req, res) {
-        return res.json(db);
-    },
-    getOrderById: function getOrderById(req, res, next) {
-        var particularOrder = db.filter(function (value) {
-            if (value.id === +req.params.id) return value;
-        });
-        res.json(particularOrder);
-    },
-    placeOrder: function placeOrder(req, res) {
-        var addedOrder = {};
-        if (db.length) {
-            req.body.id = db[db.length - 1].id + 1;
-            addedOrder = req.body;
-            db.push(req.body);
-        } else {
-            req.body.id = 1;
-            addedOrder = req.body;
-            db.push(req.body);
-        }
-
-        res.json({
-            "message": "Your order has been placed!",
-            addedOrder: addedOrder
-        });
-    }
+  removeById: function removeById(req, res) {
+    db.splice(req.params.id - 1, 1);
+    res.json({
+      "message": "Order Deleted Successfully id " + req.params.id
+    });
+  },
+  removeAll: function removeAll(req, res) {
+    db = [];
+    res.json({
+      "message": "The Order List has been Emptied successfully!",
+      db: db
+    });
+  }
 };
 module.exports = exports.default;
