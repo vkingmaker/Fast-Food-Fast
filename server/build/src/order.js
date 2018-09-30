@@ -1,11 +1,7 @@
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
-<<<<<<< HEAD
-  value: true
-=======
     value: true
->>>>>>> develop
 });
 
 var _db = require("./mock/db");
