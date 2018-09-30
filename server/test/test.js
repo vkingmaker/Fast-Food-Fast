@@ -15,7 +15,6 @@ describe('Order', () => {
     done();
   });
 
-<<<<<<< HEAD
  /*
    * Test the /DELETE/:id route
    */
@@ -41,7 +40,6 @@ it('it should DELETE an order given the id', (done) => {
       });
   });
 });
-=======
   /*
    * Test the /PUT/:id route
    */
@@ -177,5 +175,4 @@ describe('/GET order', () => {
         });
     });
   });
->>>>>>> develop
 });
