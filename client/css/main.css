@@ -407,6 +407,7 @@ footer {
     background-color: #000;
     display: flex;
     justify-content: center;
+    margin-top: 5em;
     align-items: center;
     color: #fff;
 }
@@ -431,18 +432,21 @@ td {
     margin: auto;
     padding: 0.8rem;
 }
-tr > td:nth-child(6){
-    min-width:220px;
+
+tr>td:nth-child(6) {
+    min-width: 220px;
 }
-tr > td:nth-child(6) span{
-display:inline-flex;
-justify-content: center;
-background-color:#120103;
-width:85px;
-color:#fff;
-padding:1em;
-border-radius:30px;
+
+tr>td:nth-child(6) span {
+    display: inline-flex;
+    justify-content: center;
+    background-color: #120103;
+    width: 85px;
+    color: #fff;
+    padding: 1em;
+    border-radius: 30px;
 }
+
 .statistics {
     background: url(../img/home-4.jpg);
     display: flex;
@@ -532,7 +536,7 @@ border-radius:30px;
 
 #hmbutton {
     position: absolute;
-    z-index:-2000;
+    z-index: -2000;
 }
 
 label[for="hmbutton"] {
@@ -543,6 +547,152 @@ label[for="hmbutton"] {
     border-radius: 3px;
     z-index: -2000;
 }
+
+.img-wrapper {
+    height: 100%;
+    background-image: url('../img/dummy-food.jpg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.food-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 280px;
+    justify-content: space-around;
+}
+
+.food {
+    max-width: 22%;
+    height: inherit;
+    flex: 200px;
+}
+
+.mt {
+    margin-bottom: 6em;
+}
+
+.shoppingchart {
+    background-image: url('../img/shoppingcart.png');
+    background-repeat: no-repeat;
+    background-size: 100%;
+    display: inline-block;
+    position: fixed;
+    top:80vh;
+    left:95%;
+    height: 40px;
+    width: 40px;
+}
+.shoppingchart span{
+    position:absolute;
+    left: 21px;
+    top:-10px;
+    color:red;
+    font-weight:bolder;
+}
+.food img {
+    height: 100%;
+    /* flex-basis:250px; */
+}
+
+a.add {
+    /* color:; */
+    background-color: #120103;
+    display: inline-block;
+    padding: 0.5em;
+    font-size: 0.9em;
+    border-radius: 5px;
+    width: 4em;
+    text-align: center;
+}
+
+.order-action {
+    /* border:1px solid red; */
+    margin-top: 0.5em;
+    display: flex;
+    justify-content: space-between;
+    width: 50%;
+}
+
+input.quantity {
+    width: 40%;
+    border: 1px solid #120103;
+    padding: 0 0.5em;
+}
+input#modalWindow{
+    position:absolute;
+    z-index:-1000;
+    top:-1000px;
+  } 
+  button{
+    min-width:48px;
+    border:1px teal solid;
+    border-radius:3px;
+  }
+  button > label{
+    height:2em;
+    padding:1em;
+  }
+  div p{
+    -ms-flex-item-align:center;
+        align-self:center;
+    color:#fff;
+    width:80%;
+    text-justify:justify;
+  }
+
+#main{
+    position:absolute;
+    top:15%;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    min-width:100%;
+    min-height:100vh;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+  }
+  #modalButton{
+   position:absolute; 
+    -ms-flex-item-align:center; 
+        align-self:center;
+  }
+  #modalValue{
+    z-index:-100;
+    opacity:0;
+    display:-webkit-box;
+    display:-ms-flexbox;
+    display:flex;
+    -webkit-box-pack:center;
+        -ms-flex-pack:center;
+            justify-content:center;
+    -webkit-box-orient:vertical;
+    -webkit-box-direction:normal;
+        -ms-flex-direction:column;
+            flex-direction:column;
+    width:60%;
+    min-height:80vh;
+    background-color:rgba(15, 13, 13,1);
+    -webkit-transform:scale(0.1);
+    transform:scale(0.1);
+    -webkit-transition:all 0.5s cubic-bezier(0,-0.63,1,1.69);
+  transition:all 0.5s cubic-bezier(0,-0.63,1,1.69);
+  }
+ 
+  #modalValue > label{
+    -ms-flex-item-align:end;
+        align-self:flex-end;
+    margin-right:5em;
+    color:#fff;
+  }
+  input:checked + div + div#modalValue{
+    opacity:1;
+    z-index:100;
+    -webkit-transform:scale(1);
+    transform:scale(1);
+  }
 
 @media(max-width:375px) {
     .loginForm div:nth-child(1) {
@@ -555,8 +705,24 @@ label[for="hmbutton"] {
 }
 
 @media(max-width:768px) {
-    section#nl-section {
+
+    section#nl-section,
+    footer {
         display: none;
+    }
+
+    .food-row {
+        flex-direction: row;
+    }
+
+    .order-action {
+        width: 60px !important;
+        border: 1px solid red;
+    }
+
+    .food,
+    .food-row {
+        margin-bottom: 4em;
     }
 
     section,
@@ -628,15 +794,18 @@ label[for="hmbutton"] {
         opacity: 1;
         z-index: 2000;
     }
-    .feedback{
-       display:flex;
-       flex-direction:column; 
+
+    .feedback {
+        display: flex;
+        flex-direction: column;
     }
-    .feedback figure{
-        width:100%;
+
+    .feedback figure {
+        width: 100%;
     }
-    .complaint{
-        display:flex;
-        flex-direction:column;
+
+    .complaint {
+        display: flex;
+        flex-direction: column;
     }
 }
