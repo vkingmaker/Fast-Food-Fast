@@ -3,6 +3,7 @@ node_js:
   - "stable"
 before_script:
   - cd server
+  - cd server && npm install
 cache:
   directories:
     - "node_modules"

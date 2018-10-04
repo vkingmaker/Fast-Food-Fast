@@ -447,6 +447,18 @@ tr>td:nth-child(6) span {
     border-radius: 30px;
 }
 
+tr > td:nth-child(6){
+    min-width:220px;
+}
+tr > td:nth-child(6) span{
+display:inline-flex;
+justify-content: center;
+background-color:#120103;
+width:85px;
+color:#fff;
+padding:1em;
+border-radius:30px;
+}
 .statistics {
     background: url(../img/home-4.jpg);
     display: flex;
@@ -537,6 +549,7 @@ tr>td:nth-child(6) span {
 #hmbutton {
     position: absolute;
     z-index: -2000;
+    z-index:-2000;
 }
 
 label[for="hmbutton"] {
@@ -693,7 +706,6 @@ input#modalWindow{
     -webkit-transform:scale(1);
     transform:scale(1);
   }
-
 @media(max-width:375px) {
     .loginForm div:nth-child(1) {
         width: 100%;
@@ -705,7 +717,6 @@ input#modalWindow{
 }
 
 @media(max-width:768px) {
-
     section#nl-section,
     footer {
         display: none;
@@ -723,6 +734,10 @@ input#modalWindow{
     .food,
     .food-row {
         margin-bottom: 4em;
+    }
+
+    section#nl-section {
+        display: none;
     }
 
     section,
@@ -807,5 +822,15 @@ input#modalWindow{
     .complaint {
         display: flex;
         flex-direction: column;
+    .feedback{
+       display:flex;
+       flex-direction:column; 
+    }
+    .feedback figure{
+        width:100%;
+    }
+    .complaint{
+        display:flex;
+        flex-direction:column;
     }
 }
